@@ -1,0 +1,9 @@
+<template name="nav_element_view">
+  {{#element_wrapper}}
+    {{> icon_nav_close }}
+    {{> icon_nav_open }}
+    <div {{b "ref: navEl"}} id={{elementIdentifier}}>
+      {{> Template.dynamic template=elementTemplate data=context}}
+    </div>
+  {{/element_wrapper}}
+</template>

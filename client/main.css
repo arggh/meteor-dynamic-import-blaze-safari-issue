@@ -1,0 +1,10 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.items {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}

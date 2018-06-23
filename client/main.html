@@ -1,0 +1,56 @@
+<head>
+  <title>meteor-safari-ui-issue</title>
+</head>
+
+<body>
+  <nav>
+    <button {{b "click: toggleApp"}} type="button">Open / Close</button>
+  </nav>
+  <div>
+    {{#if isOpen}}
+      {{> app}}
+    {{else}}
+      <h1>Instructions</h1>
+
+      <ol>
+        <li>Open in Safari</li>
+        <li>Make sure dev tools are closed (based on a hunch)</li>
+        <li>Click "open / close"</li>
+        <li>If there was an error, the customized Blaze package will <strong>alert()</strong></li>
+        <li>If not, hit ⌘ + R to reload</li>
+        <li>Rinse and repeat...</li>
+        <li>...you should get results in 5-10 reloads</li>
+      </ol>
+
+      <h1>Two types of errors you will encounter</h1>
+ 
+      <pre>
+        TypeError: null is not an object (evaluating 'templateInstance.viewmodel')
+        ...
+      </pre>
+       
+      <pre>
+        Exception in template helper: firstNode@http://localhost:3000/packages/blaze.js?hash=29a8779e4905ca9f2bc02a46a59c43319e54225a:504:20
+        templateInstance@http://localhost:3000/packages/blaze.js?hash=29a8779e4905ca9f2bc02a46a59c43319e54225a:3452:48
+        ...
+      </pre>
+
+    {{/if}}
+  </div>
+</body>
+
+<template name="app">
+  <main class="">
+    {{#effect}}
+      {{#each count in counts}}
+        {{> nav_element_view }}
+        {{> names_element_view count=count }}
+      {{/each}}
+    {{/effect}}
+
+    
+    {{#each count in counts}}
+      {{> names_element_view count=count }}
+    {{/each}}
+  </main>
+</template>

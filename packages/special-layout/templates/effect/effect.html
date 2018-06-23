@@ -1,0 +1,7 @@
+<template name="effect">
+  {{#if dynamicTemplateName}}
+    {{#Template.dynamic template=dynamicTemplateName }}
+      {{> Template.contentBlock}}
+    {{/Template.dynamic}}
+  {{/if}}
+</template>

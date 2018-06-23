@@ -1,0 +1,10 @@
+<template name="names_element_view">
+  {{#element_wrapper}}
+    <div class="">
+      {{#with first='Foo' second='Bar' inlineStyles=inlineStyles count=count}}
+        {{>Template.dynamic template=elementTemplate }}
+      {{/with}}
+    </div>
+  {{/element_wrapper}}
+</template>
+  

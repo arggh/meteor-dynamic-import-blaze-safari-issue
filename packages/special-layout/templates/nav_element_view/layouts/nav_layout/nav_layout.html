@@ -1,0 +1,14 @@
+<template name="nav_layout">
+  <div>
+    <div {{b "style: { backgroundColor: firstColor }"}}></div>
+    <div {{b "style: { borderColor: secondColor }"}}></div>
+    {{#each targets }}
+      <a {{b "style: linkStyles"}} href="#section_{{this._id}}">
+        <span>
+          {{this.navLabel }}
+        </span>
+      </a>
+    {{/each }}
+    <div {{b "style: { borderColor: secondColor }"}}></div>
+  </div>
+</template>
